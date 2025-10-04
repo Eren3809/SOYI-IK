@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fikrim Tanıtım Sitesi</title>
+  <style>
+    /* 🔹 Navigasyon Stilleri */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1a1a1a;
+      padding: 15px 30px;
+    }
+
+    nav a.logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* 🔹 Hero Bölümü Stilleri */
+    #home {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #f4f4f4;
+    }
+
+    #home h1 {
+      font-size: 48px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    #home p {
+      font-size: 18px;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    #home a {
+      display: inline-block;
+      background-color: #00bcd4;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    #home a:hover {
+      background-color: #0097a7;
+    }
+
+    /* 🔹 Hakkında Bölümü */
+    #about {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    #about h2 {
+      font-size: 36px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      font-size: 18px;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    #about img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    /* 🔹 Özellik Bölümleri */
+    .feature-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .feature-section img {
+      width: 400px;
+      border-radius: 8px;
+      max-width: 100%;
+    }
+
+    .feature-section div {
+      max-width: 500px;
+    }
+
+    .feature-section h2 {
+      font-size: 32px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .feature-section p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .feature-bg-light { background-color: #f9f9f9; }
+    .feature-bg-dark { background-color: #ffffff; }
+
+    /* 🔹 İletişim Bölümü */
+    #contact {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    #contact h2 {
+      font-size: 36px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    #contact p {
+      font-size: 18px;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    #contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #contact input, #contact textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    #contact button {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      background-color: #00bcd4;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #contact button:hover {
+      background-color: #0097a7;
+    }
+
+    /* 🔹 Fiyatlandırma Bölümü */
+    .pricing-section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .pricing-section h2 {
+      font-size: 36px;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .pricing-section p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #f4f4f4;
+      padding: 30px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Navigasyon Menüsü -->
+  <nav>
+    <a href="#" class="logo">Logo</a>
+    <ul>
+      <li><a href="#home">Ana Sayfa</a></li>
+      <li><a href="#about">Hakkında</a></li>
+      <li><a href="#features">Özellikler</a></li>
+      <li><a href="#contact">İletişim</a></li>
+      <li><a href="#pricing">Fiyatlandırma</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 Hero Bölümü -->
+  <section id="home">
+    <h1>Fikrini Dünyaya Tanıt!</h1>
+    <p>
+      Bu platform, yenilikçi fikirlerini tanıtman, destek bulman ve yatırımcılarla bağlantı kurman için tasarlandı.
+    </p>
+    <a href="#about">Daha Fazla Bilgi</a>
+  </section>
+
+  <!-- 🔹 Hakkında Bölümü -->
+  <section id="about">
+    <h2>Hakkında</h2>
+    <p>
+      Fikrim Tanıtım Sitesi, yenilikçi düşüncelerin görünür olmasını sağlamak için tasarlandı. 
+      Bu platform sayesinde kullanıcılar fikirlerini paylaşabilir, destek toplayabilir ve yatırımcılarla 
+      kolayca iletişim kurabilirler. Amacımız; yaratıcı bireyleri ve girişimcileri bir araya getiren güçlü bir topluluk oluşturmaktır.
+    </p>
+    <img src="https://via.placeholder.com/600x300" alt="Fikrim Tanıtım Görseli">
+  </section>
+
+  <!-- 🔹 Özellik Bölümü 1 - Görsel Solda, Metin Sağda -->
+  <section class="feature-section feature-bg-light" id="features">
+    <img src="https://via.placeholder.com/400x300" alt="Fikir Görseli">
+    <div>
+      <h2>Yenilikçi Tasarım</h2>
+      <p>
+        Platformumuz, kullanıcı dostu arayüzüyle fikirlerinizi kolayca paylaşmanızı sağlar. 
+        Her detay, etkileyici bir sunum oluşturmanız için tasarlandı.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🔹 Özellik Bölümü 2 - Metin Solda, Görsel Sağda -->
+  <section class="feature-section feature-bg-dark">
+    <div>
+      <h2>Kolay Paylaşım</h2>
+      <p>
+        Fikirlerinizi dakikalar içinde paylaşın, topluluktan geri bildirim alın ve yatırımcıların dikkatini çekin. 
+        Her şey şeffaf, basit ve etkili.
+      </p>
+    </div>
+    <img src="https://via.placeholder.com/400x300" alt="Paylaşım Görseli">
+  </section>
+
+  <!-- 🔹 İletişim Bölümü -->
+  <section id="contact">
+    <h2>İletişim</h2>
+    <p>
+      Fikriniz veya sorularınızla ilgili bizimle iletişime geçebilirsiniz. Size en kısa sürede geri dönüş yapacağız.
+    </p>
+    <form>
+      <input type="text" placeholder="Adınız" required>
+      <input type="email" placeholder="E-posta" required>
+      <textarea placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+  </section>
+
+  <!-- 🔹 Fiyatlandırma Bölümü -->
+  <section class="pricing-section" id="pricing">
+    <h2>Fiyatlandırma</h2>
+    <p>İhtiyacınıza uygun planı seçin ve fikrinizi en iyi şekilde tanıtmaya başlayın.</p>
+
+    <div class="card-container">
+      <div class="card">
+        <h2>Başlangıç</h2>
+        <ul>
+          <li>Fikir paylaşımı</li>
+          <li>Temel destek</li>
+          <li>Sınırlı analiz</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Profesyonel</h2>
+        <ul>
+          <li>Tüm özellikler</li>
+          <li>Özel
